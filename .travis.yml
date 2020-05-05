@@ -22,6 +22,6 @@ script:
   - docker push ilanpillemer/health:${TRAVIS_COMMIT::8}
   - docker push ilanpillemer/health:latest
 
-  before_install:
-    - go get -u github.com/vugu/vgrun
-    - vgrun -install-tools
+before_install:
+  - go get -u github.com/vugu/vgrun
+  - vgrun -install-tools
