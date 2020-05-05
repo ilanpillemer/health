@@ -1,0 +1,21 @@
+branches:
+  only:
+  - master
+
+sudo: required
+language: go
+env:
+  - GO111MODULE=on
+
+go:
+  - 1.14.x
+services:
+  - docker
+
+script:
+  - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o server ./cmd/server/devserver.go
+  - docker build -t ilanpillemer/health:${TRAVIS_COMMIT::8} .
+  - docker build -t ilanpillemer/health:latest .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push ilanpillemer/health:${TRAVIS_COMMIT::8}
+  - docker push ilanpillemer/health:latest
