@@ -28,6 +28,7 @@ github.com/vugu/vgrouter v0.0.0-20200428001807-e4d5549422bc h1:e+GwmGU1krdX0kG0h
 github.com/vugu/vgrouter v0.0.0-20200428001807-e4d5549422bc/go.mod h1:C+Uj+375LwtFuL5dNIMLNv/miLesGINzR04oWTyDb40=
 github.com/vugu/vgrun v0.0.0-20200413095632-da7c2a7eb99c h1:owWqozXdjlFtubKHzR5iPvZUy9viiZUy0VuWDLdwV+w=
 github.com/vugu/vgrun v0.0.0-20200413095632-da7c2a7eb99c/go.mod h1:1eGq5/lq0LG7SVGPBNhF/SPLdwBNCoySoSNs1kZN0PE=
+github.com/vugu/vjson v0.0.0-20191111004939-722507e863cb h1:svqBUd2ETVrsM31o/toxvK1WeVMan3vCgrpecE5vMlA=
 github.com/vugu/vjson v0.0.0-20191111004939-722507e863cb/go.mod h1:z7mAqSUjRDMQ09NIO18jG2llXMHLnUHlZ3/8MEMyBPA=
 github.com/vugu/vugu v0.3.0 h1:/02oeyFqSU9+OZyG2A0NiF5WeRmiyXaD9WNdhit97BY=
 github.com/vugu/vugu v0.3.0/go.mod h1:RFwOrlJHEkdZvrFcde4d6c0/7SqlRA8E4l2yz1Rs8xM=
