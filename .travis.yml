@@ -7,6 +7,8 @@ language: go
 env:
   - GO111MODULE=on
 
+install: true
+
 go:
   - 1.14.x
 services:
@@ -19,3 +21,7 @@ script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push ilanpillemer/health:${TRAVIS_COMMIT::8}
   - docker push ilanpillemer/health:latest
+
+  before_install:
+    - go get -u github.com/vugu/vgrun
+    - vgrun -install-tools
