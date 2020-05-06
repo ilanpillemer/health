@@ -16,8 +16,8 @@ services:
 script:
   - cd cmd/server
   - cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
-  - GOOS=js GOARCH=wasm go build -o main.wasm .
-  - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o server ./cmd/server/server.go
+  - GOOS=js GOARCH=wasm go build -o main.wasm
+  - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o server server.go
   - docker build -t ilanpillemer/health:${TRAVIS_COMMIT::8} .
   - docker build -t ilanpillemer/health:latest .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
