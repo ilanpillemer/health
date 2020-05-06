@@ -15,9 +15,10 @@ services:
   - docker
 
 script:
-  - cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" ./cmd/server/wasm_exec.js
-  - GOOS=js GOARCH=wasm go build -o ./cmd/server/main.wasm ./cmd/server/
-  - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o server ./cmd/server/server.go
+  - cd ./cmd/server/
+  - cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
+  - GOOS=js GOARCH=wasm go build -o main.wasm .
+  - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o server server.go
   - ls
   - docker build -t ilanpillemer/health:${TRAVIS_COMMIT::8} .
   - docker build -t ilanpillemer/health:latest .
