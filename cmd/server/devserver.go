@@ -17,7 +17,7 @@ func main() {
 	mux := devutil.NewMux()
 	mux.Match(devutil.NoFileExt, devutil.DefaultAutoReloadIndex.Replace(
 		`<!-- styles -->`,
-		`<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">`))
+		`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">`))
 	mux.Exact("/main.wasm", devutil.NewMainWasmHandler(wc))
 	mux.Exact("/wasm_exec.js", devutil.NewWasmExecJSHandler(wc))
 	mux.Default(devutil.NewFileServer().SetDir("."))

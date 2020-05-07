@@ -1,0 +1,18 @@
+ <nav class=navbar>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center" vg-content="c.title"></a>
+    </div>
+  </nav>
+
+  <script type="application/x-go">
+  import "log"
+
+  type Navbar struct {
+	  title string
+  }
+
+  func (c *Navbar) BeforeBuild() {
+  	log.Println("before build navbar")
+	c.title = "Health"
+  }
+  </script>
