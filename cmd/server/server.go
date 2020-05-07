@@ -17,6 +17,5 @@ func main() {
 	flag.Parse()
 	log.Printf("Starting HTTP Server at %q", *httpl)
 	h := devutil.NewFileServer().SetDir(*dir)
-
 	log.Fatal(http.ListenAndServe(*httpl, h))
 }
