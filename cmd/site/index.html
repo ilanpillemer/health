@@ -19,6 +19,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/text-encoding@0.7.0/lib/encoding.min.js"></script> <!-- MS Edge polyfill -->
 <script src="/wasm_exec.js"></script>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
 <!-- scripts -->
 <!-- devserver reload, remove with sed during cd to production --> <!--  sed-remove -->
 <script src="http://localhost:8324/auto-reload.js" ></script> <!--  sed-remove -->
@@ -50,5 +53,6 @@ if (wasmSupported) {
 	document.getElementById("vugu_mount_point").innerHTML = 'This application requires WebAssembly support.  Please upgrade your browser.';
 }
 </script>
+<script src="/static/assets/star.js"></script>
 </body>
 </html>

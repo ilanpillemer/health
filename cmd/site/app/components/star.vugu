@@ -1,0 +1,16 @@
+<div class="star red lighten-3">
+<svg class=star width="300" height="300"  vg-js-populate="c.drawStar(value)">
+<g transform="translate(150,170)">
+	<path class="radial" fill="#ffcdd2" stroke="#ffcdd2"
+	  />
+</g>
+</svg>
+</div>
+
+<script type="application/x-go">
+type Star struct{}
+
+func (c *Star) drawStar(value js.Value) {
+  log.Printf("%#v",js.Global().Call("drawStar"))
+}
+</script>
