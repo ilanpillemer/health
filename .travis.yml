@@ -15,6 +15,7 @@ services:
 
 script:
   - cd cmd/site
+  - sed -i '/sed-remove/d' index.html
   - cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
   - go generate
   - GOOS=js GOARCH=wasm go build -o main.wasm

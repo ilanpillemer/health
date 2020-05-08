@@ -39,3 +39,4 @@ in the MARCH-APRIL edition of the _ACM_ publication [_Interactions_](https://int
 + https://www.vugu.org/doc/build-and-dist
 + https://github.com/vugu/vugu-site
 + https://pkg.go.dev/github.com/vugu/vugu?tab=doc
++ http://datawanderings.com/2019/04/14/drawing-radial-shapes-in-d3-js/

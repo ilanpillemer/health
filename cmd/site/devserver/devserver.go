@@ -14,10 +14,10 @@ func main() {
 	log.Printf("Starting HTTP Server at %q", l)
 
 	wc := devutil.NewWasmCompiler().SetDir(".")
+
+	// using and index.html for now served by file server, in the future move to full html root.vugu
+	// until then using sed in travis to remove any dev only lines in the index.html when deploying
 	mux := devutil.NewMux()
-	mux.Match(devutil.NoFileExt, devutil.DefaultAutoReloadIndex.Replace(
-		`<!-- styles -->`,
-		`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">`))
 	mux.Exact("/main.wasm", devutil.NewMainWasmHandler(wc))
 	mux.Exact("/wasm_exec.js", devutil.NewWasmExecJSHandler(wc))
 	mux.Default(devutil.NewFileServer().SetDir("."))
