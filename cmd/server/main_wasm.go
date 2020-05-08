@@ -7,6 +7,7 @@ import (
 
 	"flag"
 
+	"github.com/ilanpillemer/health/cmd/server/app/components"
 	"github.com/vugu/vugu"
 	"github.com/vugu/vugu/domrender"
 )
@@ -30,7 +31,7 @@ func main() {
 	}
 	defer renderer.Release()
 
-	rootBuilder := &Root{}
+	rootBuilder := &components.Root{}
 
 	for ok := true; ok; ok = renderer.EventWait() {
 

@@ -1,16 +1,15 @@
 <div>
-    <main:Navbar></main:Navbar>
+    <components:Navbar></components:Navbar>
     <main role="main" class="container text-center">
 
         <div class="mt-5">
 		<div class="row">
-		<div class="col">
-
+		<div class="col s12">
 		</div>
 		</div>
         </div>
     </main>
-    <main:Footer></main:Footer>
+    <components:Footer></components:Footer>
 
 </div>
 

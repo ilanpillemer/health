@@ -6,3 +6,4 @@
 + https://www.vugu.org/doc/start
 + https://www.vugu.org/doc/build-and-dist
 + https://github.com/vugu/vugu-site
++ https://pkg.go.dev/github.com/vugu/vugu?tab=doc
