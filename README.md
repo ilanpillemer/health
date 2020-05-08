@@ -1,5 +1,35 @@
 [![Build Status](https://travis-ci.org/ilanpillemer/health.svg?branch=master)](https://travis-ci.org/ilanpillemer/health)
 
+# Health
+
+Health is a web application to support achieving health according to the WHO definition
+
+> A state of complete physical, mental and social well-being, and not
+> merely the absemce of disease or infirmity.
+
+The application uses the the _in5 model_ model as described in a number of papers and articles that can be found
+in the MARCH-APRIL edition of the _ACM_ publications [_Interactions_](https://interactions.acm.org/archive/toc/march-april-2020)
+
+
+# Website
+
++ https://health.chevrutah.com/
+
+# Technology used
+
++ [d3.js](https://d3js.org)
++ [Go](https://golang.org)
++ [Kubernetes](https://kubernetes.io)
++ [Docker](https://www.docker.com)
++ [Dockerhub](https://hub.docker.com)
++ [flux](https://fluxcd.io)
++ [travis ci](https://travis-ci.org)
++ [materialize](https://materializecss.com/)
++ [Web Assembly](https://webassembly.org/)
++ [Vugu](https://vugu.org/)
+
+
+
 # Resources
 
 + https://github.com/golang/go/wiki/WebAssembly
