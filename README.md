@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ilanpillemer/health.svg?branch=master)](https://travis-ci.org/ilanpillemer/health)
+
 # Resources
 
 + https://github.com/golang/go/wiki/WebAssembly
