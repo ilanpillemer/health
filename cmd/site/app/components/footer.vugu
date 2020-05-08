@@ -37,8 +37,11 @@
               <div class="col l4 offset-l2 s12">
 	                <h5 class="white-text">Links</h5>
 	                <ul>
+	                  <li><a class="grey-text text-lighten-3" href="https://www.southampton.ac.uk/~sign/#_ga=2.66306285.2103617517.1588963190-889004524.1588963190">m.c.</a></li>
 	                  <li><a class="grey-text text-lighten-3" href="https://www.wellthlab.ac.uk">Wellthlab</a></li>
 	                  <li><a class="grey-text text-lighten-3" href="https://dl.acm.org/doi/pdf/10.1145/3290607.3312977">in5 Model</a></li>
+	                  <li><a class="grey-text text-lighten-3" href="https://northlab.uk/talks/">NORTH Lab</a></li>
+
 	                </ul>
               </div>
             </div>
