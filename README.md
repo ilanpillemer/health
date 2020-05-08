@@ -7,7 +7,7 @@ Health is a web application to support achieving health according to the WHO def
 > A state of complete physical, mental and social well-being, and not
 > merely the absence of disease or infirmity.
 
-The application uses the the _*in5 model*_ model as described in a number of papers and articles that can be found
+The application uses the the _*in5 model*_ ]model [pdf](https://dl.acm.org/doi/pdf/10.1145/3290607.3312977) as described [here](https://dl.acm.org/doi/10.1145/3290607.3312977) and in a number of papers and articles that can be found
 in the MARCH-APRIL edition of the _ACM_ publication [_Interactions_](https://interactions.acm.org/archive/toc/march-april-2020).
 
 
