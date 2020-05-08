@@ -7,7 +7,7 @@ import (
 
 	"flag"
 
-	"github.com/ilanpillemer/health/cmd/app/components"
+	"github.com/ilanpillemer/health/cmd/site/app/components"
 	"github.com/vugu/vugu"
 	"github.com/vugu/vugu/domrender"
 )

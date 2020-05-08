@@ -1,4 +1,4 @@
 FROM scratch
-COPY cmd/server/ /app/
-WORKDIR /app/
-CMD ["/app/server"]
+COPY cmd/site/ /site/
+WORKDIR /site/
+CMD ["/site/server"]
