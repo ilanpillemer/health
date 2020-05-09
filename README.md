@@ -42,3 +42,5 @@ in the MARCH-APRIL edition of the _ACM_ publication [_Interactions_](https://int
 + http://datawanderings.com/2019/04/14/drawing-radial-shapes-in-d3-js/
 + https://www.vugu.org/doc/files/markup#vg-js-populate
 + https://www.visualcinnamon.com/2015/09/placing-text-on-arcs.html
++ https://developers.google.com/identity/sign-in/web/sign-in
++ https://developers.google.com/identity/sign-in/web/reference#gapisignin2renderid_options

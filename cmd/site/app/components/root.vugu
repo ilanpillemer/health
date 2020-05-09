@@ -10,7 +10,6 @@
         </div>
     </main>
     <components:Footer></components:Footer>
-
 </div>
 
 <script type="application/x-go">

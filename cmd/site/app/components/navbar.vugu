@@ -1,6 +1,7 @@
- <nav class=navbar>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo center" vg-content="c.title"></a>
+ <nav class=navbar >
+    <div class="nav-wrapper" vg-js-populate="c.renderSignin(value)">
+      <a href="#" class="brand-logo center" vg-content="c.title" ></a>
+       <a  id="signin" class="right"></a>
     </div>
   </nav>
 
@@ -15,4 +16,9 @@
   	log.Println("before build navbar")
 	c.title = "Health"
   }
+
+func (c *Navbar) renderSignin(value js.Value) {
+  log.Printf("rendered Navbar %#v",value)
+  js.Global().Call("initGoogle")
+}
   </script>
