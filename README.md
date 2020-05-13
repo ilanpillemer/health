@@ -44,3 +44,19 @@ in the MARCH-APRIL edition of the _ACM_ publication [_Interactions_](https://int
 + https://www.visualcinnamon.com/2015/09/placing-text-on-arcs.html
 + https://developers.google.com/identity/sign-in/web/sign-in
 + https://developers.google.com/identity/sign-in/web/reference#gapisignin2renderid_options
++ https://pkg.go.dev/golang.org/x/net/html?tab=doc
++ https://pkg.go.dev/go/format?tab=doc
+
+# misc
+
+it’s not easy to call a Go function directly from JS by name, but it is easy to call from JS to a Go function that you have a reference to using js.FuncOf
+
+so the idea would be (pseudocode):
+
+in Go:
+
+js.Global().Get(“window”).Set(“myCallbackThingy”, js.FuncOf(func(this js.Value, args …js.Value) interface {} { /* the function body */)
+
+that gets run early, like at Go application startup
+
+and then in your onSuccess you just call window.myCallbackThingy(whatever,args,here)

@@ -1,15 +1,39 @@
  <nav class=navbar >
     <div class="nav-wrapper" vg-js-populate="c.renderSignin(value)">
       <a href="#" class="brand-logo center" vg-content="c.title" ></a>
-       <a  id="signin" class="right"></a>
+       <div><a   id="signin" class="right"></a></div>
+       <div @click="c.SignOut()" vg-if="app.Me.LoggedIn"class="btn right">Log Out</div>
     </div>
   </nav>
 
   <script type="application/x-go">
   import "log"
-
+  import "github.com/ilanpillemer/health/cmd/site/app"
+  var self = &Navbar{}
   type Navbar struct {
 	  title string
+  }
+
+  func init() {
+	cb := js.FuncOf(updateState)
+	js.Global().Call("setCallback",cb)
+
+	cb2 := js.FuncOf(updateState2)
+	log.Println("window",cb)
+	js.Global().Call("setCallback2",cb2)
+  }
+
+  func  (c *Navbar) SignOut() {
+	log.Println("Signing Out")
+	me := &app.Me
+	ee := app.Event
+	if me.LoggedIn {
+		go func() {
+			ee.Lock()
+			js.Global().Call("signOut")
+			ee.UnlockRender()
+		}()
+	}
   }
 
   func (c *Navbar) BeforeBuild() {
@@ -21,4 +45,54 @@ func (c *Navbar) renderSignin(value js.Value) {
   log.Printf("rendered Navbar %#v",value)
   js.Global().Call("initGoogle")
 }
+
+type UserInfo int
+const (
+	ID UserInfo = iota
+	Name
+	ImageURL
+	Email
+	Token
+)
+
+func updateState(this js.Value, args []js.Value) interface{} {
+	log.Println("update state")
+	me := &app.Me
+	ee := app.Event
+	log.Println(ee)
+	if !me.LoggedIn {
+		go func() {
+			ee.Lock()
+			defer ee.UnlockRender()
+			log.Println("updating state")
+			log.Println("ID",args[ID].String())
+			me.LoggedIn = true
+			me.ID = args[ID].String()
+			me.Email = args[Email].String()
+			me.Name = args[Name].String()
+			me.ImageURL = args[ImageURL].String()
+			me.Token = args[Token].String()
+			log.Printf("%#v",app.Me)
+		}()
+	}
+	return nil
+}
+
+func updateState2(this js.Value, args []js.Value) interface{} {
+	log.Println("update state")
+	me := &app.Me
+	ee := app.Event
+	log.Println(ee)
+	if me.LoggedIn {
+		go func() {
+			ee.Lock()
+			defer ee.UnlockRender()
+			log.Println("updating state with Logout")
+			me.LoggedIn = false
+			log.Printf("%#v",app.Me)
+		}()
+	}
+	return nil
+}
+
   </script>

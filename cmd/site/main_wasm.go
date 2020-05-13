@@ -7,6 +7,7 @@ import (
 
 	"flag"
 
+	"github.com/ilanpillemer/health/cmd/site/app"
 	"github.com/ilanpillemer/health/cmd/site/app/components"
 	"github.com/vugu/vugu"
 	"github.com/vugu/vugu/domrender"
@@ -30,6 +31,7 @@ func main() {
 		panic(err)
 	}
 	defer renderer.Release()
+	app.Event = renderer.EventEnv()
 
 	rootBuilder := &components.Root{}
 
