@@ -2,7 +2,7 @@
     <div class="nav-wrapper" vg-js-populate="c.renderSignin(value)">
       <a href="#" class="brand-logo center" vg-content="c.title" ></a>
        <div><a   id="signin" class="right"></a></div>
-       <div @click="c.SignOut()" vg-if="app.Me.LoggedIn"class="btn right">Log Out</div>
+       <div @click="c.SignOut()" vg-if="app.Me.LoggedIn" class="btn ">Log Out</div>
     </div>
   </nav>
 
@@ -82,6 +82,7 @@ func updateState2(this js.Value, args []js.Value) interface{} {
 	log.Println("update state")
 	me := &app.Me
 	ee := app.Event
+	me.Name = ""
 	log.Println(ee)
 	if me.LoggedIn {
 		go func() {
@@ -89,6 +90,7 @@ func updateState2(this js.Value, args []js.Value) interface{} {
 			defer ee.UnlockRender()
 			log.Println("updating state with Logout")
 			me.LoggedIn = false
+			me.Name = ""
 			log.Printf("%#v",app.Me)
 		}()
 	}

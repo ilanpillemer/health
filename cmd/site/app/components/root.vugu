@@ -4,7 +4,8 @@
         <div class="component red lighten-3">
 		<div class="row red lighten-3">
 		<div class="col s12 red lighten-3">
-			<components:Star></components:Star>
+			<components:Star vg-if="!app.Me.LoggedIn"></components:Star>
+			<components:Bmi vg-if="app.Me.LoggedIn"></components:Bmi>
 		</div>
 		</div>
         </div>

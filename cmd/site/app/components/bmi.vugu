@@ -1,0 +1,22 @@
+<div class="bmi red lighten-3">
+<div class="row">
+	<div class="col">
+		<div><h5  vg-if="app.Me.LoggedIn"  class="left" vg-content='app.Me.Name'></h5></div>
+	</div>
+	<div class="col">
+		<svg class=bmi width="300" height="300"  vg-js-populate="c.drawBmi(value)">
+	</div>
+	</g>
+	</svg>
+</div>
+</div>
+
+<script type="application/x-go">
+type Bmi struct{}
+
+func (c *Bmi) drawBmi(value js.Value) {
+  //log.Printf("%#v",js.Global().Call("drawStar"))
+   log.Printf("%#v",js.Global().Call("drawBmi"))
+  //log.Println("called drawBmi")
+}
+</script>
