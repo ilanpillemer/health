@@ -15,8 +15,6 @@
 type Bmi struct{}
 
 func (c *Bmi) drawBmi(value js.Value) {
-  //log.Printf("%#v",js.Global().Call("drawStar"))
-   log.Printf("%#v",js.Global().Call("drawBmi"))
-  //log.Println("called drawBmi")
+   js.Global().Call("drawBmi")
 }
 </script>

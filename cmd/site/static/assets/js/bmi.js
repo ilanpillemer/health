@@ -1,7 +1,5 @@
 function drawBmi() {
-
 d3.csv("weights.csv", d => {
-	  console.log(d)
 	  return {
 	  	date: d3.utcParse("%Y-%m-%d")(d.date),
 	  	weight: d.weight,
@@ -9,6 +7,7 @@ d3.csv("weights.csv", d => {
 	  	bmi: d.weight / (d.height * d.height)
 	  };
 	 }).then( d => {
+	 console.log(d)
 	//geometry
 	height = 300
 	width = 300
@@ -40,10 +39,9 @@ d3.csv("weights.csv", d => {
 	    .x(d => x(d.date))
 	    .y(d => y(d.bmi))
 
-	line2 = d3.line()
+	healthy = d3.line()
 	    .x(d => x(d.date))
 	    .y(d => y(25.0))
-	console.log("l2",line2)
 
 	  var svg = d3.selectAll("svg.bmi")
 
@@ -53,24 +51,23 @@ d3.csv("weights.csv", d => {
 	  svg.append("g")
 	      .call(yAxis);
 
-svg.append("path")
-      .datum(d)
-      .attr("fill", "none")
-      .attr("stroke", "steelblue")
-      .attr("stroke-width", 1.5)
-      .attr("stroke-linejoin", "round")
-      .attr("stroke-linecap", "round")
-      .attr("d", line(d));
+	svg.append("path")
+	      .datum(d)
+	      .attr("fill", "none")
+	      .attr("stroke", "steelblue")
+	      .attr("stroke-width", 1.5)
+	      .attr("stroke-linejoin", "round")
+	      .attr("stroke-linecap", "round")
+	      .attr("d", line);
 
- svg.append("path")
-      .datum(d)
-      .attr("fill", "none")
-      .attr("stroke", "green")
-      .attr("stroke-width", 1.5)
-      .attr("stroke-dasharray", "3,3")
-      .attr("stroke-linecap", "round")
-      .attr("d", line2);
-
+	 svg.append("path")
+	      .datum(d)
+	      .attr("fill", "none")
+	      .attr("stroke", "green")
+	      .attr("stroke-width", 1.5)
+	      .attr("stroke-dasharray", "3,3")
+	      .attr("stroke-linecap", "round")
+	      .attr("d", healthy);
 })
 
 
